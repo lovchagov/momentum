@@ -81,30 +81,38 @@ function setLocalStorage() {
   /* ---- Погода ---- */
 
   function setLocalStorage2() {
-    localStorage.setItem('city', city.value);
+    localStorage.setItem('city', city.textContent);
   }
   window.addEventListener('beforeunload', setLocalStorage2)
 
   function getLocalStorage2() {
     if(localStorage.getItem('city')) {
-      city.value = localStorage.getItem('city');
+      city.textContent = localStorage.getItem('city');
     }
   }
   window.addEventListener('load', getLocalStorage2)
 
   
   async function getWeather() {
+    try {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.textContent}&lang=en&appid=08f2a575dda978b9c539199e54df03b0&units=metric`;
     const res = await fetch(url);
-    const data = await res.json();
-    
+    const data = await res.json(); 
     weatherIcon.className = 'weather-icon owf';
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
     temperature.textContent = `${data.main.temp.toFixed(0)}°C`;
     weatherDescription.textContent = data.weather[0].description;
     windSpeed.textContent = `Wind speed: ${data.wind.speed}m/s`;
     humidity.textContent = `Humidity: ${data.main.humidity}%`
-    setTimeout(showTime, 60000);
+    }
+    catch(err) {
+      temperature.textContent = ``;
+      weatherDescription.textContent = `Please enter correct city!`;
+      windSpeed.textContent = ``;
+      humidity.textContent = ``;
+
+    }
+
   }
   
   function setCity(event) {
@@ -116,7 +124,6 @@ function setLocalStorage() {
   
   document.addEventListener('DOMContentLoaded', getWeather);
   city.addEventListener('keypress', setCity);
-  city.addEventListener('submit', setCity);
 
   /* ----Цитаты ----*/
   async function getQuotes() {  
@@ -128,7 +135,6 @@ function setLocalStorage() {
 
     quote.textContent = randomquote.text;
     author.textContent = randomquote.author;
-    setTimeout(getQuotes, 10000);
   }
   getQuotes();
 
