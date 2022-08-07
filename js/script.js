@@ -116,6 +116,7 @@ function setLocalStorage() {
   
   document.addEventListener('DOMContentLoaded', getWeather);
   city.addEventListener('keypress', setCity);
+  city.addEventListener('submit', setCity);
 
   /* ----Цитаты ----*/
   async function getQuotes() {  
