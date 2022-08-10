@@ -1,7 +1,4 @@
-@font-face {
-  font-family: 'Arial-MT';
-  src: url("../assets/fonts/Arial-MT.woff"); /* Путь к файлу со шрифтом */
- }
+
 
 * {
   box-sizing: border-box;
@@ -18,7 +15,7 @@ body {
   text-align: center;
   background: url("../assets/img/bg.jpg") center/cover, rgba(0, 0, 0, 0.5);
   background-blend-mode: multiply;
-  transition: background-image 1s ease-in-out;
+  transition: background-image 2s ease-in-out;
 }
 
 .header {
@@ -82,8 +79,9 @@ body {
   outline: 0;
   opacity: .8;
   cursor: pointer;
-  transition: .3s;  
+  transition: 1s;  
 }
+
 
 .player-icon:hover,
 .slider-icon:hover,
@@ -91,12 +89,20 @@ body {
   opacity: 1;
 }
 
-.player-icon:active,
-.slider-icon:active,
-.change-quote:active {
+
+
+.quote-rotate {
   border: 0;
   outline: 0;  
-  transform: scale(1.1);
+  transform: rotateZ(360deg);
+}
+
+.player-icon:active,
+.slider-icon:active
+{
+  border: 0;
+  outline: 0;  
+  transform: scale(1.2);
 }
 
 .play {
@@ -162,7 +168,8 @@ body {
   background-color: transparent;
 }
 
-.city::placeholder {  
+.city::placeholder { 
+  font-family: 'Roboto Slab', serif;
   font-size: 20px;
   color: #fff;
   opacity: .6;
@@ -201,7 +208,7 @@ body {
   min-height: 124px;
   margin-bottom: 10px;
   font-family: 'Roboto Slab', serif;
-  font-size: 130px;
+  font-size: 110px;
   letter-spacing: 5px;  
 }
 
