@@ -507,7 +507,7 @@ function changeProgressBar() {
 for (let i = 0; i < playList.length; i++) {
   const li = document.createElement('li');
   playListIn.append(li);
-  li.innerHTML = `${"<img src='../assets/svg/play.svg'></img>"} ${playList[i].title}`;
+  li.innerHTML = `${"<img src='./assets/svg/play.svg'></img>"} ${playList[i].title}`;
 };
 
 const playlistArr = document.querySelectorAll('.play-list > li')
