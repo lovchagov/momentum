@@ -3,27 +3,65 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="assets/favicon.ico" rel="shortcut icon" />
   <link rel="stylesheet" href="css/owfont-regular.css" />
   <link rel="stylesheet" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <title>Momentum</title>
 </head>
 
 <body>
   <header class="header">
-    <div class="player">
-      <audio src=""></audio>
-      <div class="player-controls">
-        <button class="play-prev player-icon"></button>
-        <button class="play player-icon"></button>
-        <button class="play-next player-icon"></button>
+    <div class="playerandplaylist">
+      <div class="player">
+        <audio src=""></audio>
+        <div class="player-contolscont">
+          <div class="player-controls">
+            <button class="play-prev player-icon"></button>
+            <button class="play player-icon"></button>
+            <button class="play-next player-icon"></button>
+          </div>
+          <div class="songname-and-bar">
+            <div class="song-name"></div>
+            <div class="progress-bar-and-time">
+              <div class="progress">
+                <div class="currentTime"></div>
+                <input type="range" id="progress-bar" min="0" max="233.717551" value="0">
+                <div class="durationTime"></div>
+                <i class="fas fa-volume-down audio-vol-toggle"></i>
+                <input type="range" class="audio-vol-progress">
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
       <ul class="play-list"></ul>
     </div>
+
+    <div class="linkss">
+    <div class="link-add nonactive">
+      <div class="link-addedlist">
+        <ul class="links-list"></ul>
+       </div>
+    <div class="containerlink">
+      <p  class="link-item">Links:</p>
+
+ <input class="link-item" id="link-name" type="text" placeholder="Enter name">
+ <input class="link-item" id="link-direction" type="text" placeholder="Enter link">
+ <div class="add-link-cont"><div class="addlink link-item" >+</div></div>
+</div>
+
+  </div>
+  <div class="link-icon"><img src="assets/img/chain.svg" alt=""></div>
+</div>
+
+
     <div class="weather">
       <input class="city" value="Minsk"></input>
       <i class="weather-icon owf"></i>
@@ -47,15 +85,102 @@
     <date class="date"></date>
     <div class="greeting-container">
       <span class="greeting"></span>
-      <input type="text" class="name" />
+      <input type="text" size="7" class="name">
     </div>
+
   </main>
   <footer class="footer">
-    <button class="change-quote"></button>
-    <div>
-      <div class="quote"></div>
-      <div class="author"></div>
+    <div class="settings">
+      <div>
+        <div class="background-source">
+          <div class="block-settings">
+            <div class="visibility-elements">
+              <legend class="inputitem elementsch">Elements:</legend>
+              <div class="inputitem">
+                <input type="checkbox" id="music" name="interest" value="music" checked>
+                <label for="music" class="musicch">Music</label>
+              </div>
+              <div class="inputitem">
+                <input type="checkbox" id="weather" name="interest" value="weather" checked>
+                <label  for="weather" class="weatherch">Weather</label>
+              </div>
+              <div class="inputitem">
+                <input type="checkbox" id="time" name="interest" value="time" checked>
+                <label for="time" class="timech">Time</label>
+              </div>
+              <div class="inputitem">
+                <input type="checkbox" id="date" name="interest" value="date" checked>
+                <label for="date" class="datech">Date</label>
+              </div>
+              <div class="inputitem">
+                <input type="checkbox" id="greetings" name="interest" value="greetings" checked>
+                <label for="greetings" class="greetingsch">Greetings</label>
+              </div>
+              <div class="inputitem">
+                <input type="checkbox" id="quotes" name="interest" value="quotes" checked>
+                <label for="quotes" class="quotesch">Quotes</label>
+              </div>
+              <div class="inputitem">
+                <input type="checkbox" id="author" name="interest" value="music" checked>
+                <label for="author" class="authorch">Author</label>
+              </div>
+              <div class="inputitem">
+                <input type="checkbox" id="links" name="interest" value="links" checked>
+                <label for="links" class="linksch"></label>
+              </div>
+
+            </div>
+          </div>
+          <legend class="inputitem languagech">Language:</legend>
+          <div class="inputitem">
+            <input type="radio" id="english" name="language" value="english" checked>
+            <label for="english">English</label>
+          </div>
+          <div class="inputitem">
+            <input type="radio" id="russian" name="language" value="russian">
+            <label for="russian">Русский</label>
+          </div>
+          <legend class="inputitem backgroundsch">Source of backgrounds:</legend>
+          <div class="inputitem">
+            <input type="radio" id="gitHub" name="drone" value="gitHub" checked>
+            <label for="gitHub">GitHub</label>
+          </div>
+          <div class="inputitem">
+            <input type="radio" id="unsplash" name="drone" value="unsplash">
+            <label for="unsplash">Unsplash API</label>
+          </div>
+          <div class="inputitem">
+            <input type="radio" id="Flickr" name="drone" value="flickr">
+            <label for="flickr">Flickr API</label>
+          </div>
+          <div class="inputitem">
+            <input class='tags' type="text" name="drone" id="tags" placeholder="" >
+          </div>
+          <div class="inputitem">
+            <button class="wallpapercheck"> Выбрать </button>
+          </div>
+        </div>
+        <div class="settings-icon">
+          <img src="assets/img/setting.svg" alt="">
+        </div>
+
+      </div>
     </div>
+    <div class="quotecontainer">
+      <button class="change-quote"></button>
+      <div class="quote-and-author">
+        <div class="quote"></div>
+        <div class="author"></div>
+      </div>
+    </div>
+
+
+    <div class="authorme">
+      <a class="item-school" href="https://github.com/lovchagov/ "><img src="assets/img/github-svgrepo-com.svg"
+          alt="no icon"></a>
+      <p class="item-school">2022</p>
+      <a class="item-school" href="https://rs.school/js-stage0/"><img src="assets/img/rs_school.svg" alt="no icon"></a>
+
   </footer>
   <script type="module" src="js/script.js"></script>
 </body>
