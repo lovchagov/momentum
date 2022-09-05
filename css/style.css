@@ -552,6 +552,7 @@ input[type="range" i] {
 
 @media (max-width: 768px) {
   .time {
+    padding-top: 50px;
     min-height: 80px;
     font-size: 50px;
   }
@@ -698,6 +699,13 @@ input[type="range" i] {
   z-index: 51;
 }
 
+@media (max-width: 768px) {
+  .settings-icon>img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
 .settings-icon>img:hover {
   transform: rotate(20deg);
   opacity: 0.9;
@@ -829,16 +837,35 @@ input[type="range" i] {
   margin-bottom: 20px;
 }
 
+
+
 .link-icon > img{
   width: 30px;
   height: 30px;
-  transition: all 1s ease;s
+  transition: all 1s ease;
 }
+
 
 .link-icon > img:hover{
   width: 20px;
   height: 20px;
   transition: all 0.4s ease;
+}
+
+@media (max-width:768px) {
+  .link-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .link-icon > img{
+    width: 15px;
+    height: 15px;
+  }
+  .link-icon > img:hover{
+    width: 10px;
+    height: 10px;
+  }
 }
 
 .link-icon:hover {
