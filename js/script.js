@@ -398,7 +398,8 @@ const playListIn = document.querySelector('.play-list');
 const progressBar = document.querySelector('#progress-bar');
 const player = document.querySelector('.playerandplaylist');
 const audioVolProgress = document.querySelector('.audio-vol-progress');
-const audioMuteBtn = document.querySelector('.audio-vol-toggle')
+const audioMuteBtn = document.querySelector('.audio-vol-toggle');
+const playlistIcon = document.querySelector('.play-list-icon');
 
 
 let isPlay = false;
@@ -523,6 +524,10 @@ for (let i = 0; i < playlistArr.length; i++) {
   })
 }
 
+function togglePlaylist() {
+  playListIn.classList.toggle('active');
+}
+
 
 play.addEventListener('click', playPause);
 play.addEventListener('click', toggleButton);
@@ -530,6 +535,7 @@ playNext.addEventListener('click', playNextTrack);
 playPrev.addEventListener('click', playPrevTrack);
 audio.addEventListener('ended', playNextTrack);
 progressBar.addEventListener('change', changeProgressBar);
+playlistIcon.addEventListener('click', togglePlaylist);
 
 
 

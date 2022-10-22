@@ -29,6 +29,7 @@ body {
 .playerandplaylist {
   width: 450px;
   transition: 0.4s all ease;
+  border-radius: 10px;
 
 }
 
@@ -44,7 +45,7 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 120px;
-  margin-right: 20px;
+  margin:3%;
 }
 
 
@@ -150,10 +151,11 @@ body {
 }
 
 .play-list {
-  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   padding: 10px;
-
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s all;
 }
 
 @media (max-width: 768px) {
@@ -162,11 +164,6 @@ body {
   }
 }
 
-@media (max-width: 400px) {
-  .play-list {
-   display: none;
-  }
-}
 
 .play-list>li {
   list-style-type: none;
@@ -175,6 +172,10 @@ body {
 
 .play-list>li>img {
   width: 15px;
+}
+
+.play-list-icon {
+  cursor: pointer;
 }
 
 
@@ -199,25 +200,17 @@ body {
   left: 17%;
 }
 
-@media (max-width: 768px) {
-  .audio-vol-progress {
-    transform: rotate(90deg);
-  }
-}
-
-@media (max-width: 400px) {
-  .audio-vol-progress {
-    transform: rotate(0deg);
-  }
-}
-
 .audio-vol-toggle {
-  width: 1.4vmax;
+  width: 16px;
+  height: 16px;
+  background-image: url('../assets/img/no-sound.png');
 }
 
-.fa-volume-down:before,
-.fa-volume-low:before {
-  content: "\f027";
+.fa-volume-down,
+.fa-volume-low {
+  width: 16px;
+  height: 16px;
+  background-image: url('../assets/img/no-sound.png');
 }
 
 .audio-prev-btn,
@@ -240,6 +233,7 @@ input[type="range" i] {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  gap: 10px;
 }
 
 .progress {
@@ -289,13 +283,14 @@ input[type="range" i] {
   border-radius: 10px;
   padding: 10px;
   transition: 0.4s all ease;
+  margin-left: 1%;
 }
 
 
 
 @media (max-width: 768px) {
   .weather {
-    font-size: 10px;
+    font-size: 12px;
   }
   .temperature {
     font-size: 20px;
@@ -308,10 +303,7 @@ input[type="range" i] {
 
 .description-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  column-gap: 12px;
+ flex-direction: column;
 }
 
 .weather-icon {
@@ -461,6 +453,12 @@ input[type="range" i] {
 
 .greeting-container > input {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .greeting-container > input {
+    text-align: center;
+  }
 }
 
 
