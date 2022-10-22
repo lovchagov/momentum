@@ -14,7 +14,7 @@ const langEN = {
   'greeting': ['Good night,', 'Good morning,', 'Good afternoon,', 'Good evening,'],
   'locale': 'en-EN',
   'defaultCity': 'Minsk',
-  'weatherDesc': ['Wind speed: ', 'm/s', 'Humidity: ', 'Error! ', 'not found!'],
+  'weatherDesc': ['Wind speed: ', 'm/s', 'Humidity: ', 'Error! ', 'Not found!'],
   'quotes': 'js/dataen.json',
   'namePlaceholder': '[Enter name]',
   'bgTagsPlaceholder': '[Enter tags]',
