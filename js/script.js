@@ -1,6 +1,6 @@
 const langRU = {
   'lang': 'ru',
-  'greeting': ['Доброй ночи,', 'Доброе утро,', 'Добрый день,', 'Добрый вечер,'],
+  'header': ['Максим Ловчагов' , 'Инженер технической поддержки', 'Инженер связи', 'Сентябрь 2013 - Май 2018', 'Front-end разработчик', 'Май 2022 - По настоящее время', 'Stage #0 Сертификат'],
   'locale': 'ru-RU',
   'defaultCity': 'Минск',
   'weatherDesc': ['Скорость ветра: ', 'м/с', 'Влажность: ', 'Ошибка! ', 'не найден!'],
@@ -11,10 +11,10 @@ const langRU = {
 }
 const langEN = {
   'lang': 'en',
-  'greeting': ['Good night,', 'Good morning,', 'Good afternoon,', 'Good evening,'],
+  'header': ['Maxim Lovchagov' , 'Support Engineer', 'Telecommunications engineer', 'September 2013 - May 2018', ''],
   'locale': 'en-EN',
   'defaultCity': 'Minsk',
-  'weatherDesc': ['Wind speed: ', 'm/s', 'Humidity: ', 'Error! ', 'Not found!'],
+  'weatherDesc': ['Wind speed: ', 'm/s', 'Humidity: ', 'Error! ', 'not found!'],
   'quotes': 'js/dataen.json',
   'namePlaceholder': '[Enter name]',
   'bgTagsPlaceholder': '[Enter tags]',
@@ -202,7 +202,7 @@ function wallpaper() {
   /*--- Если первая радиокнопка - то из моего ГитХаба ---*/
 
   if (drone[0].checked) {
-    body.style.backgroundImage = `url(https://raw.githubusercontent.com/lovchagov/momentumgallery/263defe97b9e2b85cd35821ea218bdf2b97aef8f/${timeOfDay}/${randomNumZero}_optimized.jpg)`;
+    body.style.backgroundImage = `url(https://raw.githubusercontent.com/lovchagov/momentumgallery/9996c9d63f3bf921a4ad987c34e07ea154fa7c91/${timeOfDay}/${randomNumZero}_optimized.jpg)`;
   }
 
   /*--- Если вторая радиокнопка - то из Unsplash ---*/
@@ -229,7 +229,7 @@ wallpaperCheck.addEventListener('click', wallpaper);
 
 function changeBg() {
   var img = new Image();
-  img.src = `https://raw.githubusercontent.com/lovchagov/momentumgallery/263defe97b9e2b85cd35821ea218bdf2b97aef8f/${timeOfDay}/${randomNumZero}_optimized.jpg`
+  img.src = `https://raw.githubusercontent.com/lovchagov/momentumgallery/9996c9d63f3bf921a4ad987c34e07ea154fa7c91/${timeOfDay}/${randomNumZero}_optimized.jpg`
   img.onload = () => {
     body.style.backgroundImage = `url(${img.src})`;
   };
@@ -398,8 +398,7 @@ const playListIn = document.querySelector('.play-list');
 const progressBar = document.querySelector('#progress-bar');
 const player = document.querySelector('.playerandplaylist');
 const audioVolProgress = document.querySelector('.audio-vol-progress');
-const audioMuteBtn = document.querySelector('.audio-vol-toggle');
-const playlistIcon = document.querySelector('.play-list-icon');
+const audioMuteBtn = document.querySelector('.audio-vol-toggle')
 
 
 let isPlay = false;
@@ -524,10 +523,6 @@ for (let i = 0; i < playlistArr.length; i++) {
   })
 }
 
-function togglePlaylist() {
-  playListIn.classList.toggle('active');
-}
-
 
 play.addEventListener('click', playPause);
 play.addEventListener('click', toggleButton);
@@ -535,7 +530,6 @@ playNext.addEventListener('click', playNextTrack);
 playPrev.addEventListener('click', playPrevTrack);
 audio.addEventListener('ended', playNextTrack);
 progressBar.addEventListener('change', changeProgressBar);
-playlistIcon.addEventListener('click', togglePlaylist);
 
 
 
