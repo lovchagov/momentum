@@ -239,15 +239,16 @@ input[type="range" i] {
 .progress {
   display: flex;
   align-items: center;
+  gap: 10px;
   padding: 5px;
 }
 
 .currentTime {
-  margin-right: 10px;
+  width: 30px;
 }
 
 .durationTime {
-  margin-left: 10px;
+  width: 30px;
 }
 
 .song-name {
