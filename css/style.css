@@ -51,6 +51,8 @@ body {
 
 
 .play-list {
+  position: absolute;
+  z-index: 5000;
   text-align: left;
 }
 

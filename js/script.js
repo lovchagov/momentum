@@ -483,7 +483,7 @@ function updateProgressValue() {
   progressBar.max = audio.duration;
   progressBar.value = audio.currentTime;
   document.querySelector('.currentTime').innerHTML = (formatTime(Math.floor(audio.currentTime)));
-  if (document.querySelector('.durationTime').innerHTML === "NaN:NaN") {
+  if (audio.duration === "NaN:NaN") {
     document.querySelector('.durationTime').innerHTML = "0:00";
   } else {
     document.querySelector('.durationTime').innerHTML = (formatTime(Math.floor(audio.duration)));
